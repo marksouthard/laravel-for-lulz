@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laravel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400);
+
+      body {
+        color: #80878c;
+        font-family: 'Source Sans Pro';
+        font-weight: 400;
+      }
+      h1, h2, h3 {
+        color: #525252;
+        font-weight: 200;
+      }
+      h4 {
+        margin-bottom: -0.5em;
+      }
+      p {
+        margin-bottom: 1em;
+        margin-top: 0;
+      }
+      a {
+        color: #f4645f;
+        text-decoration: none;
+      }
+      strong {
+        color: #232323;
+      }
+      #laravel { margin-bottom: 10px; }
+      .hljs-default .hljs-string { color: #f4645f; }
+      li ul {
+        margin-top: -1em;
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+background-image: url(assets/laravel-logo.png)
+class: bottom, left
+
+# Laravel for Lulz
+<!-- The PHP Framework for Web Artisans -->
+
+---
+
+class: left, middle
+
+# Pre-Reqs:
+
+1. Requires PHP 5.4 or later
+1. Requires Mcrypt, OpenSSL, Mbstring, and Tokenizer PHP Extensions
+1. Requires Composer
+
+---
+
+class: left, middle
+
+# What is Composer?
+- Dependency manager for PHP
+- Inspired by npm (Node.js) and bundler (Ruby)
+
+---
+
+class: left, middle
+
+# Let's see Composer in action
+```
+composer create-project laravel/laravel ghetto-imdb --prefer-dist
+```
+
+---
+
+class: left, middle
+
+# Oof, let's see Composer's inaction
+```
+composer why-are-you-so-slow --prefer-fast
+```
+
+---
+
+class: left, middle
+
+Sample of composer.json
+```json
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": ["framework", "laravel"],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "laravel/framework": "5.0.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+}
+```
+
+---
+
+class: left, middle
+
+Sample of composer.json
+```json
+{
+* "name": "laravel/laravel",
+* "description": "The Laravel Framework.",
+* "keywords": ["framework", "laravel"],
+* "license": "MIT",
+* "type": "project",
+  "require": {
+    "laravel/framework": "5.0.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+}
+```
+
+---
+
+class: left, middle
+
+Sample of composer.json
+```json
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": ["framework", "laravel"],
+  "license": "MIT",
+  "type": "project",
+* "require": {
+*   "laravel/framework": "5.0.*"
+* },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0",
+    "phpspec/phpspec": "~2.1"
+  },
+* "autoload": {
+*   "classmap": [
+*     "database"
+*   ],
+*   "psr-4": {
+*     "App\\": "app/"
+*   }
+* },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  },
+}
+```
+
+---
+
+class: left, middle
+
+Sample of composer.json
+```json
+{
+  "name": "laravel/laravel",
+  "description": "The Laravel Framework.",
+  "keywords": ["framework", "laravel"],
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "laravel/framework": "5.0.*"
+  },
+* "require-dev": {
+*   "phpunit/phpunit": "~4.0",
+*   "phpspec/phpspec": "~2.1"
+* },
+  "autoload": {
+    "classmap": [
+      "database"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+* "autoload-dev": {
+*   "classmap": [
+*     "tests/TestCase.php"
+*   ]
+* },
+}
+```
+
+---
+
+class: left, top
+
+# Get all the packages
+
+--
+
+## [Packagist](http://packagist.com)
+The PHP package repository for Composer
+
+--
+
+## [Packalyst](http://packalyst.com)
+Directory of Laravel specific packages
+
+--
+
+## Is Laravel installed yet?
+
+---
+
+class: left, top
+
+# What is Laravel?
+
+--
+
+* A free, open souce MVC web-application framework by Taylor Otwell
+
+--
+
+* The Laravel ecosystem is striving for developer bliss
+
+--
+
+* Most popular PHP project on Github
+
+--
+
+* Let's look at the folder structure to see what it is
+
+---
+
+name: best-of
+class: left, top
+
+# The best **bits** of Laravel
+--
+
+- Artisan commands
+
+--
+
+- Registration and authentication scaffolding out of the box
+
+--
+
+- Middleware
+
+--
+
+- Elixir
+  - compile Sass, less and Coffescript, combine files and minify them
+  - version files (with an HTML helper to outpur proper file name)
+  - run PHPUnit Tests and/or PHPSpec Tests
+
+--
+
+- Eloquent ORM
+
+``` php
+return User::all();
+```
+
+--
+
+``` php
+return User::where('username', 'mark')->get();
+```
+
+--
+
+``` php
+return Book::where(['year' => 2010, 'publisher' => 'RandomHouse'])
+       ->get(['title', 'author']);
+```
+
+---
+
+template: best-of
+
+- Schema builder and migrations
+
+--
+
+- Database seeds (Laracasts Generators)
+
+--
+
+- Let's ditch http://localhost:8000
+
+---
+
+template: best-of
+
+## Homestead
+
+--
+
+Homestead is an official, pre-packaged Vagrant "box"
+
+--
+
+* Ubuntu 14.04
+* PHP 5.6
+* HHVM
+* Nginx
+* MySQL
+* Postgres
+* Node (With Bower, Grunt, and Gulp)
+* Redis
+* Memcached
+* Beanstalkd
+* Laravel Envoy
+* Fabric + HipChat Extension
+* Blackfire Profiler
+
+---
+
+template: best-of
+
+- Resource Routes and Controllers
+
+--
+
+- Blade Templating Engine
+
+--
+
+- Form model binding
+
+--
+
+- Route Requests (UpdateMovieRequest)
+
+--
+
+- Commands and Events
+
+---
+
+template: best-of
+
+#### Commands
+
+``` php
+/**
+ *  Dispatch a command from a controller
+ *
+ *  We're using the BaseController's dispatchableTrait to dispatch
+ */
+public function purchasePodcast($podcastId)
+{
+    $this->dispatch(
+        new PurchasePodcast(Auth::user(), Podcast::findOrFail($podcastId))
+    );
+}
+```
+
+---
+
+template: best-of
+
+#### Commands
+
+``` php
+/**
+ *  An example command
+ */
+class PurchasePodcast extends Command implements SelfHandling {
+
+    protected $user, $podcast;
+
+    public function __construct(User $user, Podcast $podcast)
+    {
+        $this->user = $user;
+        $this->podcast = $podcast;
+    }
+
+    public function handle()
+    {
+        // Handle the logic to purchase the podcast...
+
+        event(new PodcastWasPurchased($this->user, $this->podcast));
+    }
+
+}
+```
+
+---
+
+template: best-of
+
+- Cashier - Simple Stripe billing integration
+
+--
+
+- Envoy - A task runner for your remote server
+
+--
+
+- Mail - Easy integration with Mailgun and Mandrill
+
+--
+
+- Flysystem - Stupid easy filesystem abstraction
+
+``` php
+Storage::disk('local')->put('file.txt', 'Contents');
+```
+
+--
+
+``` php
+Storage::disk('s3')->put('file.txt', 'Contents');
+```
+
+--
+
+- And loads of other goodies
+
+---
+
+name: ecosystem
+
+# Laravel Ecosystem
+
+### Forge - PHP ecosystems on Linode and Digital Ocean
+
+--
+
+- build servers with all the stuff lickity-split
+- push to deploy directly from Github or Bitbucket
+- connect boxes for horizontal scaling
+
+--
+
+### Envoyer - zero downtime PHP deployment
+
+--
+
+  - automated or manual deployments (Github and Bitbucket support)
+  - deploy to multiple servers, application health check, cron job monitoring
+  - customize deployments (e.g., run php artisan optimize and/or php artisan route:cache)
+
+--
+
+### Laracasts - learn all the Laravel
+
+---
+
+# Laravel 5.1 - What's coming
+
+* Commands changed to Jobs
+* PSR-2 namespacing
+* Resolve a service from blade (i.e., inject a service into templates)
+
+
+---
+
+class: middle, center
+
+# Questions?
+
+    </textarea>
+    <script src="assets/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
