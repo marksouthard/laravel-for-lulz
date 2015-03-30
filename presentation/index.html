@@ -15,7 +15,18 @@
         color: #525252;
         font-weight: 200;
       }
+      h2 {
+        font-size: 28px !important;
+      }
+      h3 {
+        color: #232323;
+        font-size: 20px !important;
+        font-weight: 400;
+        margin-bottom: 0.5em;
+      }
       h4 {
+        color: #232323;
+        font-size: 18px !important
         margin-bottom: -0.5em;
       }
       p {
@@ -32,8 +43,8 @@
       #laravel { margin-bottom: 10px; }
       .hljs-default .hljs-string { color: #f4645f; }
       li ul {
-        margin-top: -1em;
-        margin-bottom: 1em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
       }
     </style>
   </head>
@@ -77,15 +88,6 @@ composer create-project laravel/laravel ghetto-imdb --prefer-dist
 
 class: left, middle
 
-# Oof, let's see Composer's inaction
-```
-composer why-are-you-so-slow --prefer-fast
-```
-
----
-
-class: left, middle
-
 Sample of composer.json
 ```json
 {
@@ -121,7 +123,7 @@ Sample of composer.json
 
 class: left, middle
 
-Sample of composer.json
+Sample of composer.json — package information highlighted
 ```json
 {
 * "name": "laravel/laravel",
@@ -156,7 +158,7 @@ Sample of composer.json
 
 class: left, middle
 
-Sample of composer.json
+Sample of composer.json — production required components
 ```json
 {
   "name": "laravel/laravel",
@@ -191,7 +193,7 @@ Sample of composer.json
 
 class: left, middle
 
-Sample of composer.json
+Sample of composer.json — development required components
 ```json
 {
   "name": "laravel/laravel",
@@ -238,72 +240,99 @@ The PHP package repository for Composer
 ## [Packalyst](http://packalyst.com)
 Directory of Laravel specific packages
 
---
-
-## Is Laravel installed yet?
-
 ---
 
 class: left, top
 
 # What is Laravel?
 
---
-
 * A free, open souce MVC web-application framework by Taylor Otwell
-
---
-
 * The Laravel ecosystem is striving for developer bliss
-
---
-
 * Most popular PHP project on Github
-
---
-
-* Let's look at the folder structure to see what it is
 
 ---
 
-name: best-of
-class: left, top
+class: center, middle
 
 # The best **bits** of Laravel
---
 
-- Artisan commands
+---
 
---
+class: left, top
 
-- Registration and authentication scaffolding out of the box
+# The best bits: **Artisan commands**
 
---
+### A sample of my most used commands ###
 
-- Middleware
+- Start a server at http://localhost:8000
+```bash
+php artisan serve
+```
 
---
+- Make commands, controllers, models, requests and more
+```bash
+php artisan make
+```
 
-- Elixir
+- Run migrations
+```bash
+php artisan migrate
+```
+
+---
+
+class: left, top
+
+# The best bits: **Artisan commands**
+
+### Best commands after pushing code updates
+
+- Optimize the framework for better performance
+```bash
+php artisan optimize
+```
+- Create route cache file for faster route registration
+```bash
+php artisan route:cache
+```
+
+---
+
+class: left, top
+
+# The best bits: **Incl. out of the box**
+
+- Registration and authentication scaffolding
+- Gulp tasks via Elixir
   - compile Sass, less and Coffescript, combine files and minify them
   - version files (with an HTML helper to outpur proper file name)
   - run PHPUnit Tests and/or PHPSpec Tests
+- CSRF protection
+- The ability to easily remove included scaffoldings via
+```bash
+php artisan fresh
+```
 
---
+---
 
-- Eloquent ORM
+class: left, top
 
-``` php
+# The best bits: **Middleware**
+
+
+---
+
+class: left, top
+
+# The best bits: **Eloquent ORM**
+
+```php
 return User::all();
 ```
 
---
-
-``` php
+```php
 return User::where('username', 'mark')->get();
 ```
-
---
 
 ``` php
 return Book::where(['year' => 2010, 'publisher' => 'RandomHouse'])
@@ -312,29 +341,21 @@ return Book::where(['year' => 2010, 'publisher' => 'RandomHouse'])
 
 ---
 
-template: best-of
+class: left, top
 
-- Schema builder and migrations
+# The best bits: **Schema builder, migrations and DB seeds**
 
---
 
-- Database seeds (Laracasts Generators)
-
---
-
-- Let's ditch http://localhost:8000
+- Database seeds
+- Learn and use Laracasts Generators
 
 ---
 
-template: best-of
+class: top, left
 
-## Homestead
-
---
+# The best bits: **Homestead**
 
 Homestead is an official, pre-packaged Vagrant "box"
-
---
 
 * Ubuntu 14.04
 * PHP 5.6
